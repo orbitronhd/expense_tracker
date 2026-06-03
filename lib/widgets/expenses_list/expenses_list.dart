@@ -1,3 +1,4 @@
+import 'package:expense_tracker/main.dart';
 import 'package:expense_tracker/widgets/expenses_list/expense_item.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,7 @@ class ExpensesList extends StatelessWidget {
       itemCount: expenses.length,
       itemBuilder: (ctx, index) => Dismissible(
         key: ValueKey(expenses[index]),
+        background: Container(color: Theme.of(context).colorScheme.error),
         onDismissed: (direction) {
           onRemoveExpense(expenses[index]);
         },
